@@ -22,7 +22,7 @@
 <body class="p-3 mb-2 bg-dark text-black">
     <div class="text-center">
         <h1 class="text-center">PRODUCTO</h1>
-        <form action='http://localhost:3000/guardarProducto' method="POST">
+        <form action='https://depos.herokuapp.com/guardarProducto' method="POST">
             <p>
                 <h5>Nombre</h5>
                 <input type="text" name="nombre">
@@ -44,7 +44,7 @@
         </form>
     </div>
     <script>
-        var url= 'http://localhost:3000/verProveedoresTabla';
+        var url= 'https://depos.herokuapp.com/verProveedoresTabla';
 
         fetch(url)
         .then(response => response.json())
