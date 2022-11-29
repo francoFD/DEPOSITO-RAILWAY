@@ -21,7 +21,7 @@
 <body class="p-3 mb-2 bg-dark text-black">
     <h1 class="text-center">PRODUCTOS ALMACENADOS</h1>
     <div>
-        <form action='http://localhost:3000/verDeposito' method="GET">
+        <form action='https://depos.herokuapp.com/verDeposito' method="GET">
             <table class="table table-whide table-striped">
                 <tbody id="tablaProducto">
                     <thead>
@@ -39,7 +39,7 @@
     </div>
     
     <div class="text-center">
-        <form action='http://localhost:3000/eliminarProducto' method="POST">
+        <form action='https://depos.herokuapp.com/eliminarProducto' method="POST">
             <h3>Eliminar Producto</h3>
             <p>
             <h5>Nº Producto</h5>
@@ -51,7 +51,7 @@
 
 
     <script>
-        var url = 'http://localhost:3000/verProductosTabla';
+        var url = 'https://depos.herokuapp.com/verProductosTabla';
 
         fetch(url)
             .then(response => response.json())
