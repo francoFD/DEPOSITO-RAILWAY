@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DEPOSITO DIAZ</title>
+    <meta charset="utf-8">
+    <!-- CSS, color de texto y fondo-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .table {
+            background-color: rgb(255, 255, 255) !important;
+        }
+        body{
+            background-image: url('https://img.freepik.com/fotos-premium/marco-cajas-carton-entrega-o-mudanza-pila-cajas-espacio-copia-fondo-azul_188237-707.jpg');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="p-3 mb-2 bg-dark text-black">
+    <div class="container mt-3">
+        <h1 class="text-center">PROVEEDORES</h1>
+
+        <form action='http://localhost:3000/verProveedor' method="get">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabla"></tbody>
+            </table>
+        </form>
+    </div>
+
+    <div class="text-center">
+
+        <form action='http://localhost:3000/modificarProveedor' method="POST">
+            <h3>Modificar Proveedor</h3>
+
+            <p>
+                <h5>Nº Proveedor</h5>
+                <input type="number" name="idr">
+            </p>
+
+            <p>
+                <h5>Nombre</h5>
+                <input type="text" name="nombre">
+            </p>
+
+            <p>
+                <input type="submit" value="Guardar" type="button" class="btn btn-primary btn-block">
+            </p>
+
+        </action=>   
+    </div>
+
+
+    <script>
+        var url = 'http://localhost:3000/verProveedoresTabla';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(proveedores => mostrarProveedores(proveedores))
+            .catch(error => console.log(error));
+
+        const mostrarProveedores = (provees) => {
+
+            var proveedoresTabla = "";
+
+            for (var i = 0; i < provees.length; i++) {
+                proveedoresTabla = proveedoresTabla + "<tr><td>" + i + "</td><td>" + provees[i].nombre + "</td><td>" + "</tr>";
+            }
+
+            document.getElementById('tabla').innerHTML = proveedoresTabla;
+
+        };
+
+    </script>
+</body>
+
+</html>

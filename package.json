@@ -1,0 +1,17 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Mi primer paquete de Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --ignore feedback.json server.js",
+    "start": "server.js"
+  },
+  "author": "Franco",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
