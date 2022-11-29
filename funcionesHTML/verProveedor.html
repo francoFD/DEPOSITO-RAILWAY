@@ -23,7 +23,7 @@
     <div class="container mt-3">
         <h1 class="text-center">PROVEEDORES</h1>
 
-        <form action='http://localhost:3000/verProveedor' method="get">
+        <form action='https://depos.herokuapp.com/verProveedor' method="get">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -39,7 +39,7 @@
 
 
     <script>
-        var url = 'http://localhost:3000/verProveedoresTabla';
+        var url = 'https://depos.herokuapp.com/verProveedoresTabla';
 
         fetch(url)
             .then(response => response.json())
