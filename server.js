@@ -89,7 +89,7 @@ app.post('/eliminarProducto',(request,response) => {
 
 app.post('/eliminarProveedor',(request,response) => {
     funciones.eliminarProveedor(request.body);
-    response.send(request.body);
+    response.redirect('/eliminarProveedores');
 });
 
 app.post('/modificarProducto',(request,response) => {
@@ -100,6 +100,7 @@ app.post('/modificarProducto',(request,response) => {
 app.post('/modificarProveedor',(request,response) => {
     funciones.modificarProveedor(request.body);
     response.send(request.body);
+
 });
 
 ///////    ///////     ///////   ///////   ///////   /////   ////////   ///////
